@@ -8,9 +8,6 @@ const App: React.FC = () => {
   return (
     <Router>
       <div>
-        <nav>
-          <a href="/">Home</a> | <a href="/about">About</a>
-        </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
