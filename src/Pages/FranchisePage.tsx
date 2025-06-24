@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as echarts from "echarts";
-
-const App: React.FC = () => {
+import indiaGeoJSON from "../../india.json";
+const FranchisePage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("franchise");
   const [formData, setFormData] = useState({
@@ -19,6 +19,8 @@ const App: React.FC = () => {
   useEffect(() => {
     if (mapRef.current) {
       const mapChart = echarts.init(mapRef.current);
+      echarts.registerMap("India", indiaGeoJSON);
+
       const mapOption = {
         animation: false,
         tooltip: {
@@ -717,4 +719,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default FranchisePage;
